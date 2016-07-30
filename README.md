@@ -1,18 +1,10 @@
-# Master Thesis
+# ErasureBench
 
-## Report
+ErasureBench is an open-source framework to test and benchmark erasure coding implementations for distributed storage systems under realistic conditions. ErasureBench automatically instantiates and scales a cluster of storage nodes, and can seamlessly leverage existing failure traces.
 
-The report is written in LaTeX, and can be compiled using a standard distribution like TeXlive. A Makefile is available, so the report can be generated using:
-```
-$ cd report
-$ make
-```
+It consists of a Java application that provides an interface between FUSE and different erasure code implementations. The backend used to store individual blocks can be replaced.
 
-To compile the bibliography, [Biber](http://biblatex-biber.sourceforge.net/) is needed.
-
-## Erasure-Tester
-
-This project is a Java application that provides an interface between FUSE and different erasure code implementations. The backend used to store individual blocks can be replaced.
+## How to run
 
 The Gradle building system is used to compile and run the project. The easiest way to mount an instance of the tester is to fire up some Docker containers.
 
@@ -63,8 +55,5 @@ $ ./benchmark_in_docker.sh
 
 The methodology mentioned above make the containers run on the local machine. When a large number of containers are needed, there is the possibility to use [Docker Swarm](https://www.docker.com/products/docker-swarm). It aggregates multiple Docker hosts into a single Docker endpoint.
 
-Instructions on how to use that technology are available in a [separate file](projects/erasure-tester/swarm_instructions.md).
-
-## FTA Parser
-The [Failure Trace Archive](http://fta.scem.uws.edu.au/) is a website hosting _failure traces_. They can be used when running benchmarks in the erasure tester. The FTA parser provides scripts that plot each trace file. Experimenters can then see which part of which trace is of interest to them.
+Instructions on how to use that technology are available in a [separate file](swarm_instructions.md).
 
