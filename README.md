@@ -4,6 +4,8 @@ ErasureBench is an open-source framework to test and benchmark erasure coding im
 
 It consists of a Java application that provides an interface between FUSE and different erasure code implementations. The backend used to store individual blocks can be replaced.
 
+ErasureBench is presented in details in the paper titled _[Have a Seat on the ErasureBench: Easy Evaluation of Erasure Coding Libraries for Distributed Storage Systems](Have_a_Seat_on_the_ErasureBench.pdf)_, presented at the _[Workshop on Planetary-Scale Distributed Systems 2016 (W-PSDS)](http://wpsds.lsd.di.uminho.pt/2016/index.html)_, held in conjunction with the _[35th Symposium on Reliable Distributed Systems (SRDS)](http://srds2016.inf.mit.bme.hu/)_.
+
 ## How to run
 
 The Gradle building system is used to compile and run the project. The easiest way to mount an instance of the tester is to fire up some Docker containers.
